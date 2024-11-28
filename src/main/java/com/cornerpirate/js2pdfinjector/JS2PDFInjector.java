@@ -95,9 +95,9 @@ public class JS2PDFInjector {
             File js_injected_pdf = new File(output_name);
 
             PDDocument document = PDDocument.load(pdf_in);
-            System.out.println("[*] Original PDF: " + pdf_in);
-            System.out.println("[*] JavaScript Payload: " + js_in);
-            System.out.println("[*] Output File Path: " + js_injected_pdf);
+            //System.out.println("[*] Original PDF: " + pdf_in);
+            //System.out.println("[*] JavaScript Payload: " + js_in);
+            //System.out.println("[*] Output File Path: " + js_injected_pdf);
 
             String content = new Scanner(js_in).useDelimiter(File.separator + "Z").next();
 
@@ -106,7 +106,8 @@ public class JS2PDFInjector {
             document.getDocumentCatalog().setOpenAction(javascript);
             document.save(js_injected_pdf);
             
-            System.out.println("[*] Poisoned File Created: " + js_injected_pdf);
+            //System.out.println("[*] Poisoned File Created: " + js_injected_pdf);
+            System.out.println(js_injected_pdf);
             
             // This user is doing it the GUI way so GUI them a message
             if (args.length != 2) {
